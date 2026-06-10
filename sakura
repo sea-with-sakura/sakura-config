@@ -16,21 +16,27 @@ dns:
     - tls://1.0.0.1:853
     - tls://dns.google:853
 proxies:
-  - name: 🇰🇷sakura
-    type: hysteria2
-    server: 64.176.231.41
-    port: 8443
-    password: 17793081248724sakura
-    sni: bing.com
-    alpn: []
-    up: ''
-    down: ''
-    skip-cert-verify: true
+  - name: 🇸🇬SAKURA
+    type: vless
+    server: clash.sakuracloud.top
+    port: 4433
+    uuid: 10ca9749-35b0-4d36-a91f-2b35024a88e2
+    network: tcp
+    udp: true
+    tfo: false
+    tls: true
+    servername: www.microsoft.com
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mJMxbEqPAQv1KRkxVGy-1Gd3X0t8VblA3fAYMkegzgg
+      short-id: 4ee5bca28f65bd16
+
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 🇰🇷sakura
+      - 🇸🇬SAKURA
 rules:
   - DOMAIN-SUFFIX,old-market-simulator.fandom.com,DIRECT
   - DOMAIN-SUFFIX,anyrouter.top,PROXY
