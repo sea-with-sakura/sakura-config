@@ -1,1 +1,1 @@
-use https://cdn.jsdelivr.net/gh/sea-with-sakura/sakura-config@main/sakura
+Use https://www.jsdelivr.com/tools/purge to purge with the following url: https://cdn.jsdelivr.net/gh/sea-with-sakura/sakura-config@main/sakura
