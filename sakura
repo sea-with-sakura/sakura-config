@@ -38,6 +38,7 @@ proxy-groups:
       - 🇸🇬SAKURA
 rules:
   - DOMAIN-SUFFIX,old-market-simulator.fandom.com,DIRECT
+  - DOMAIN-SUFFIX,trafficmanager.net,DIRECT
   - DOMAIN-SUFFIX,anyrouter.top,PROXY
   - DOMAIN-KEYWORD,reddit,PROXY
   - DOMAIN-KEYWORD,byteoversea,PROXY
