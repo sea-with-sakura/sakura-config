@@ -405,7 +405,7 @@ rules:
   - DOMAIN-SUFFIX,linode.com,PROXY
   - DOMAIN-SUFFIX,lithium.com,PROXY
   - DOMAIN-SUFFIX,littlehj.com,PROXY
-  - DOMAIN-SUFFIX,live.com,PROXY
+  - DOMAIN-SUFFIX,live.com,DIRECT
   - DOMAIN-SUFFIX,live.net,PROXY
   - DOMAIN-SUFFIX,livefilestore.com,PROXY
   - DOMAIN-SUFFIX,llnwd.net,PROXY
