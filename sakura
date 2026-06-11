@@ -47,14 +47,29 @@ proxies:
       public-key: mJMxbEqPAQv1KRkxVGy-1Gd3X0t8VblA3fAYMkegzgg
       short-id: 4ee5bca28f65bd16
 
+  - name: sakura
+    type: hysteria2
+    server: 20.222.90.62
+    port: 1248
+    password: 5221236sadadfaf4
+    sni: bing.com
+    alpn: []
+    up: ''
+    down: ''
+    skip-cert-verify: true
+
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - 🇸🇬SAKURA
+      - sakura
+
 rules:
   - DOMAIN-SUFFIX,anyrouter.top,PROXY
   - DOMAIN-SUFFIX,singlelogin.rs,PROXY
+  - DOMAIN-SUFFIX,speedtest.net,PROXY
+  - DOMAIN-SUFFIX,vps234.com,PROXY
   - DOMAIN-SUFFIX,hhkan2.com,PROXY
   - DOMAIN-SUFFIX,dygod.net,PROXY
   - DOMAIN-SUFFIX,proton.me,PROXY
