@@ -270,7 +270,6 @@ rules:
   - DOMAIN-SUFFIX,linode.com,PROXY
   - DOMAIN-SUFFIX,lithium.com,PROXY
   - DOMAIN-SUFFIX,littlehj.com,PROXY
-  - DOMAIN-SUFFIX,live.com,DIRECT
   - DOMAIN-SUFFIX,live.net,PROXY
   - DOMAIN-SUFFIX,livefilestore.com,PROXY
   - DOMAIN-SUFFIX,llnwd.net,PROXY
@@ -459,4 +458,11 @@ rules:
   - IP-CIDR6,fc00::/7,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
+
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,windows.com,DIRECT
+  - DOMAIN-SUFFIX,live.com,DIRECT
+  - DOMAIN-SUFFIX,office.com,DIRECT
+  - DOMAIN-SUFFIX,azureedge.net,DIRECT
+
   - MATCH,PROXY
