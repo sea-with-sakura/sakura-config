@@ -31,7 +31,7 @@ dns:
     ]
 
 proxies:
-  - name: 🇸🇬SAKURA
+  - name: 🇸🇬新加坡
     type: vless
     server: clash.sakuracloud.top
     port: 4433
@@ -47,7 +47,7 @@ proxies:
       public-key: mJMxbEqPAQv1KRkxVGy-1Gd3X0t8VblA3fAYMkegzgg
       short-id: 4ee5bca28f65bd16
 
-  - name: sakura
+  - name: 🇯🇵日本
     type: hysteria2
     server: 20.222.90.62
     port: 1248
@@ -62,8 +62,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 🇸🇬SAKURA
-      - sakura
+      - 🇸🇬新加坡
+      - 🇯🇵日本
 
 rules:
   - DOMAIN-SUFFIX,anyrouter.top,PROXY
