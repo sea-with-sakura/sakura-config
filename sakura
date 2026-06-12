@@ -47,23 +47,11 @@ proxies:
       public-key: mJMxbEqPAQv1KRkxVGy-1Gd3X0t8VblA3fAYMkegzgg
       short-id: 4ee5bca28f65bd16
 
-  - name: 🇯🇵日本
-    type: hysteria2
-    server: 20.222.90.62
-    port: 1248
-    password: 5221236sadadfaf4
-    sni: bing.com
-    alpn: []
-    up: ""
-    down: ""
-    skip-cert-verify: true
-
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - 🇸🇬新加坡
-      - 🇯🇵日本
 
 rule-providers:
   cn:
@@ -286,7 +274,6 @@ rules:
   - DOMAIN-SUFFIX,mindnode.com,PROXY
   - DOMAIN-SUFFIX,mobile01.com,PROXY
   - DOMAIN-SUFFIX,modmyi.com,PROXY
-  - DOMAIN-SUFFIX,msedge.net,PROXY
   - DOMAIN-SUFFIX,myfontastic.com,PROXY
   - DOMAIN-SUFFIX,name.com,PROXY
   - DOMAIN-SUFFIX,nextmedia.com,PROXY
@@ -459,10 +446,63 @@ rules:
   - RULE-SET,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
 
+  # 微软
   - DOMAIN-SUFFIX,microsoft.com,DIRECT
   - DOMAIN-SUFFIX,windows.com,DIRECT
+  - DOMAIN-SUFFIX,windows.net,DIRECT
+  - DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+  - DOMAIN-SUFFIX,msftconnecttest.com,DIRECT
+  - DOMAIN-SUFFIX,msftncsi.com,DIRECT
   - DOMAIN-SUFFIX,live.com,DIRECT
   - DOMAIN-SUFFIX,office.com,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-SUFFIX,outlook.com,DIRECT
+  - DOMAIN-SUFFIX,bing.com,DIRECT
+  - DOMAIN-SUFFIX,msedge.net,DIRECT
+  - DOMAIN-SUFFIX,azure.com,DIRECT
+  - DOMAIN-SUFFIX,azure.net,DIRECT
   - DOMAIN-SUFFIX,azureedge.net,DIRECT
+  - DOMAIN-SUFFIX,azurefd.net,DIRECT
+  - DOMAIN-SUFFIX,trafficmanager.net,DIRECT
+  - DOMAIN-SUFFIX,microsoftonline.com,DIRECT
+  - DOMAIN-SUFFIX,msauth.net,DIRECT
+  - DOMAIN-SUFFIX,msftauth.net,DIRECT
+  - DOMAIN-SUFFIX,visualstudio.com,DIRECT
+  - DOMAIN-SUFFIX,vsassets.io,DIRECT
+
+  # apple
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN-SUFFIX,aaplimg.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+
+  # cdn
+  - DOMAIN-SUFFIX,jsdelivr.net,DIRECT
+  - DOMAIN-SUFFIX,unpkg.com,DIRECT
+  - DOMAIN-SUFFIX,digicert.com,DIRECT
+  - DOMAIN-SUFFIX,sectigo.com,DIRECT
+  - DOMAIN-SUFFIX,globalsign.com,DIRECT
+  - DOMAIN-SUFFIX,letsencrypt.org,DIRECT
+
+  # code
+  - DOMAIN-SUFFIX,nodejs.org,DIRECT
+  - DOMAIN-SUFFIX,python.org,DIRECT
+  - DOMAIN-SUFFIX,pypi.org,DIRECT
+  - DOMAIN-SUFFIX,files.pythonhosted.org,DIRECT
+  - DOMAIN-SUFFIX,apache.org,DIRECT
+  - DOMAIN-SUFFIX,maven.apache.org,DIRECT
+  - DOMAIN-SUFFIX,repo.maven.apache.org,DIRECT
+  - DOMAIN-SUFFIX,gradle.org,DIRECT
+  - DOMAIN-SUFFIX,publicsuffix.org,DIRECT
+
+  # others
+  - DOMAIN-SUFFIX,hf-mirror.com,DIRECT
+  - DOMAIN-SUFFIX,visualstudio.com,DIRECT
+  - DOMAIN-SUFFIX,rumt-zh.com,DIRECT
+  - DOMAIN-SUFFIX,trustasia.com,DIRECT
+  - DOMAIN-SUFFIX,cnnic.cn,DIRECT
+  - DOMAIN-SUFFIX,lencr.org,DIRECT
 
   - MATCH,PROXY
