@@ -54,8 +54,8 @@ proxies:
     password: 5221236sadadfaf4
     sni: bing.com
     alpn: []
-    up: ''
-    down: ''
+    up: ""
+    down: ""
     skip-cert-verify: true
 
 proxy-groups:
@@ -64,6 +64,15 @@ proxy-groups:
     proxies:
       - 🇸🇬新加坡
       - 🇯🇵日本
+
+rule-providers:
+  cn:
+    type: http
+    behavior: domain
+    format: yaml
+    url: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cn.yaml"
+    path: ./rules/cn.yaml
+    interval: 86400
 
 rules:
   - DOMAIN-SUFFIX,anyrouter.top,PROXY
@@ -443,4 +452,11 @@ rules:
   - DOMAIN-KEYWORD,wlmonitor,REJECT
   - DOMAIN-KEYWORD,zjtoolbar,REJECT
 
-  - MATCH,DIRECT
+  - GEOIP,PRIVATE,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+  - IP-CIDR6,fe80::/10,DIRECT,no-resolve
+  - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - RULE-SET,cn,DIRECT
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,PROXY
