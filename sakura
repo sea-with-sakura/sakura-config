@@ -438,6 +438,11 @@ rules:
   - IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
   - IP-CIDR6,fe80::/10,DIRECT,no-resolve
   - IP-CIDR6,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR6,fd7a:115c:a1e0::/48,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
 
@@ -495,6 +500,7 @@ rules:
   - DOMAIN-SUFFIX,publicsuffix.org,DIRECT
 
   # others
+  - DOMAIN-SUFFIX,tailscale.com,DIRECT
   - DOMAIN-SUFFIX,hf-mirror.com,DIRECT
   - DOMAIN-SUFFIX,visualstudio.com,DIRECT
   - DOMAIN-SUFFIX,rumt-zh.com,DIRECT
@@ -505,4 +511,5 @@ rules:
   - DOMAIN-SUFFIX,iconify.design,DIRECT
   - DOMAIN-SUFFIX,proxmox.com,DIRECT
   - DOMAIN-SUFFIX,vscode-cdn.net,DIRECT
+  - DOMAIN-SUFFIX,ts.net,DIRECT
   - MATCH,PROXY
