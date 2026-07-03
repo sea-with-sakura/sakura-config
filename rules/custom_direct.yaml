@@ -68,3 +68,8 @@ payload:
   - DOMAIN-SUFFIX,proxmox.com
   - DOMAIN-SUFFIX,vscode-cdn.net
   - DOMAIN-SUFFIX,ts.net
+  - DOMAIN-SUFFIX,npmjs.com
+  - DOMAIN-SUFFIX,cdnjs.com
+  - DOMAIN-SUFFIX,mozilla.org
+  - DOMAIN-SUFFIX,ctfassets.net
+  - DOMAIN-SUFFIX,shopify.com
