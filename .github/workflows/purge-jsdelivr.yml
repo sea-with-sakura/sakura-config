@@ -1,0 +1,31 @@
+name: Purge jsDelivr
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - sakura
+      - rules/**
+      - .github/workflows/purge-jsdelivr.yml
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge jsDelivr cache
+        run: |
+          set -euo pipefail
+
+          urls=(
+            "https://purge.jsdelivr.net/gh/sea-with-sakura/sakura-config@main/rules/custom_proxy.yaml"
+            "https://purge.jsdelivr.net/gh/sea-with-sakura/sakura-config@main/rules/custom_direct.yaml"
+            "https://purge.jsdelivr.net/gh/sea-with-sakura/sakura-config@main/rules/custom_reject.yaml"
+          )
+
+          for url in "${urls[@]}"; do
+            echo "Purging $url"
+            curl --fail --silent --show-error --location "$url"
+            echo
+          done
