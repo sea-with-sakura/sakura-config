@@ -328,8 +328,6 @@ payload:
   - DOMAIN-SUFFIX,wikimedia.org
   - DOMAIN-SUFFIX,wikipedia.com
   - DOMAIN-SUFFIX,wikipedia.org
-  - DOMAIN-SUFFIX,windows.com
-  - DOMAIN-SUFFIX,windows.net
   - DOMAIN-SUFFIX,wire.com
   - DOMAIN-SUFFIX,wordpress.com
   - DOMAIN-SUFFIX,workflowy.com
