@@ -73,3 +73,4 @@ payload:
   - DOMAIN-SUFFIX,mozilla.org
   - DOMAIN-SUFFIX,ctfassets.net
   - DOMAIN-SUFFIX,shopify.com
+  - DOMAIN-SUFFIX,overleaf.com
