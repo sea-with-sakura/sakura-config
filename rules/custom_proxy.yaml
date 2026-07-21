@@ -350,3 +350,8 @@ payload:
   - DOMAIN-SUFFIX,gitlab.com
   - DOMAIN-SUFFIX,ipapi.com
   - DOMAIN-SUFFIX,ipapi.co
+  - DOMAIN-SUFFIX,store.steampowered.com
+  - DOMAIN-SUFFIX,api.steampowered.com
+  - DOMAIN-SUFFIX,steamstatic.com
+  - DOMAIN-SUFFIX,steamcommunity.com
+  - DOMAIN-SUFFIX,steamusercontent.com
