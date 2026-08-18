@@ -359,3 +359,10 @@ payload:
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,steamserver.net
   - DOMAIN-SUFFIX,pki.goog
+  - DOMAIN-SUFFIX,rockstargames.com
+  - DOMAIN-SUFFIX,cookielaw.org
+  - DOMAIN-SUFFIX,sentry.io
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,recaptcha.net
+  - DOMAIN-SUFFIX,rsg.sc
+  - DOMAIN-SUFFIX,onetrust.com
