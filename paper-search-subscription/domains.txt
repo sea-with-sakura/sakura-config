@@ -42,3 +42,6 @@ worldneural.com/research
 www.aibaize.cc
 huggingface.co/papers/
 www.papercache.org
+gist.science
+www.graphastra.com/zh/papers
+jishuzhan.net/article
