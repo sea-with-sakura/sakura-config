@@ -1,7 +1,7 @@
 ! Title: Paper Source Search Filter
 ! Description: Hide selected paper aggregation/review sites from desktop Google, Bing and Baidu results.
-! Version: 2026.11.09.204658
-! Last modified: 2026-11-09T20:46:58+08:00
+! Version: 2026.11.09.205050
+! Last modified: 2026-11-09T20:50:50+08:00
 ! Expires: 1 day
 ! Requires AdGuard Extended CSS support. Not a DNS/hosts blocklist.
 ! Homepage: https://github.com/sea-with-sakura/sakura-config/tree/main/paper-search-subscription
@@ -9,7 +9,7 @@
 ! Scope: listed sources only. No network blocking, scriptlets or remote includes.
 ! Desktop result-container selectors may need updates after search-engine changes.
 ! Redirect-only results may be missed when the source is not exposed in the DOM.
-! Active source entries: 47
+! Active source entries: 49
 ! Google domains covered: .com, .com.hk, .com.tw, .com.sg, .co.jp, .co.uk, .de, .fr, .ca, .com.au
 
 ! Source: papers.cool
@@ -326,4 +326,18 @@ google.com,google.com.hk,google.com.tw,google.com.sg,google.co.jp,google.co.uk,g
 bing.com#?##b_results > li.b_algo:has(h2 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*jishuzhan[.]net(:[0-9]+)?\/article([\/?#]|$)/"))
 baidu.com#?##content_left > .c-container:matches-attr("mu"="/^https?:\/\/([A-Za-z0-9-]+[.])*jishuzhan[.]net(:[0-9]+)?\/article([\/?#]|$)/")
 baidu.com#?##content_left > .c-container:has(h3 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*jishuzhan[.]net(:[0-9]+)?\/article([\/?#]|$)/"))
+
+! Source: paperlayer.ai
+google.com,google.com.hk,google.com.tw,google.com.sg,google.co.jp,google.co.uk,google.de,google.fr,google.ca,google.com.au#?#a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*paperlayer[.]ai(:[0-9]+)?([\/?#]|$)/"):has(h3):upward(div.MjjYud, div.g)
+bing.com#?##b_results > li.b_algo:has(h2 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*paperlayer[.]ai(:[0-9]+)?([\/?#]|$)/"))
+bing.com#?##b_results > li.b_algo:has(cite:contains(/(^|[^A-Za-z0-9._-])([A-Za-z0-9-]+[.])*paperlayer[.]ai([^A-Za-z0-9._-]|$)/))
+baidu.com#?##content_left > .c-container:matches-attr("mu"="/^https?:\/\/([A-Za-z0-9-]+[.])*paperlayer[.]ai(:[0-9]+)?([\/?#]|$)/")
+baidu.com#?##content_left > .c-container:has(h3 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*paperlayer[.]ai(:[0-9]+)?([\/?#]|$)/"))
+
+! Source: aipulselab.tech
+google.com,google.com.hk,google.com.tw,google.com.sg,google.co.jp,google.co.uk,google.de,google.fr,google.ca,google.com.au#?#a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*aipulselab[.]tech(:[0-9]+)?([\/?#]|$)/"):has(h3):upward(div.MjjYud, div.g)
+bing.com#?##b_results > li.b_algo:has(h2 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*aipulselab[.]tech(:[0-9]+)?([\/?#]|$)/"))
+bing.com#?##b_results > li.b_algo:has(cite:contains(/(^|[^A-Za-z0-9._-])([A-Za-z0-9-]+[.])*aipulselab[.]tech([^A-Za-z0-9._-]|$)/))
+baidu.com#?##content_left > .c-container:matches-attr("mu"="/^https?:\/\/([A-Za-z0-9-]+[.])*aipulselab[.]tech(:[0-9]+)?([\/?#]|$)/")
+baidu.com#?##content_left > .c-container:has(h3 a:matches-attr("href"="/^https?:\/\/([A-Za-z0-9-]+[.])*aipulselab[.]tech(:[0-9]+)?([\/?#]|$)/"))
 
