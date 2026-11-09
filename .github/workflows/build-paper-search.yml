@@ -1,0 +1,64 @@
+name: Build paper search subscription
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - paper-search-subscription/domains.txt
+      - paper-search-subscription/generate.ps1
+      - paper-search-subscription/paper-search-filter.txt
+      - .github/workflows/build-paper-search.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - paper-search-subscription/domains.txt
+      - paper-search-subscription/generate.ps1
+      - paper-search-subscription/paper-search-filter.txt
+      - .github/workflows/build-paper-search.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: paper-search-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate sources and generate filter
+        shell: pwsh
+        run: ./paper-search-subscription/generate.ps1
+
+  publish:
+    needs: validate
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      # Build the latest main so queued runs do not publish outdated sources.
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Generate subscription
+        shell: pwsh
+        run: ./paper-search-subscription/generate.ps1
+      - name: Commit updated subscription
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add -- paper-search-subscription/paper-search-filter.txt
+          if git diff --cached --quiet; then
+            echo "Subscription is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update paper search subscription"
+          git push origin HEAD:main
